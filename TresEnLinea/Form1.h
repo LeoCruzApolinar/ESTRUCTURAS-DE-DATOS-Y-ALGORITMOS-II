@@ -17,7 +17,7 @@ namespace CppCLRWinFormsProject {
     using namespace System::Drawing;
 
 
-    // variable
+    // variable 
     int Matriz[3][3];
     int X = -1;
     int O = 1;
