@@ -27,7 +27,7 @@ namespace CppCLRWinFormsProject {
     int IATurno;
     int Vx = 0;
     int Vo = 0;
-
+    // hola git
 
     public ref class Form1 : public System::Windows::Forms::Form
     {
