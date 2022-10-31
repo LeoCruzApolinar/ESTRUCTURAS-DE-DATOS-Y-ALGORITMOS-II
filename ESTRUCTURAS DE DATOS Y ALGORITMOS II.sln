@@ -5,8 +5,6 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TresEnLinea", "TresEnLinea\TresEnLinea.vcxproj", "{BA4A2FB0-0CEB-448F-B7DC-68F2BBD24AF3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prada", "prada\prada.vcxproj", "{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,14 +21,6 @@ Global
 		{BA4A2FB0-0CEB-448F-B7DC-68F2BBD24AF3}.Release|x64.Build.0 = Release|x64
 		{BA4A2FB0-0CEB-448F-B7DC-68F2BBD24AF3}.Release|x86.ActiveCfg = Release|Win32
 		{BA4A2FB0-0CEB-448F-B7DC-68F2BBD24AF3}.Release|x86.Build.0 = Release|Win32
-		{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}.Debug|x64.ActiveCfg = Debug|x64
-		{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}.Debug|x64.Build.0 = Debug|x64
-		{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}.Debug|x86.ActiveCfg = Debug|Win32
-		{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}.Debug|x86.Build.0 = Debug|Win32
-		{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}.Release|x64.ActiveCfg = Release|x64
-		{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}.Release|x64.Build.0 = Release|x64
-		{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}.Release|x86.ActiveCfg = Release|Win32
-		{6862518E-BE45-42DF-A9D4-6A7A50BFA7ED}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
