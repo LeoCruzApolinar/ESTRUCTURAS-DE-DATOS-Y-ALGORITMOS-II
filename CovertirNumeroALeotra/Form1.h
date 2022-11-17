@@ -430,6 +430,7 @@ string LeerEntreCorchetes(int ubicacion, bool compuesto)// lee la parte de texto
 }
 
 private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+    //Evita el ingreso de letras
     if (e->KeyChar == '.') {
         if (this->textBox1->Text->Contains(".") && !this->textBox1->SelectedText->Contains("."))
             e->Handled = true;
@@ -445,9 +446,13 @@ private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows:
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
     string texbox = toStandardString(textBox1->Text);
-    texbox.erase(std::remove(texbox.begin(), texbox.end(), ','), texbox.end());
-    double numero = stod(texbox);
-    if (textBox1->Text == "" || numero > 999999999.99)
+    double numero;
+    if (texbox[0]!='.')
+    {
+        texbox.erase(std::remove(texbox.begin(), texbox.end(), ','), texbox.end());
+        numero = stod(texbox);
+    }
+    if (textBox1->Text == "" || numero > 999999999.99 || texbox[0] == '.')
     {
         MessageBox::Show("Error");
         textBox1->Text = "";
@@ -460,13 +465,20 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
         string entero = LeerEntreLlaves(stoi(Ltxtbox(true)));
         if (ns - ds)
         {
+            string decimal;
             string l = Ltxtbox(false);
             int m = stoi(l);
             if (m <= 999999999)
             {
-               
                 
-                string decimal = entero + " Con " + LeerEntreLlaves(stoi(Ltxtbox(false)))/*Ltxtbox(false) */+ " Centavos ";
+                if (entero == "Cero")
+                {
+                    decimal = Ltxtbox(false) + " Centavos ";
+                }
+                else
+                {
+                    decimal = entero + " Con " + /*LeerEntreLlaves(stoi(Ltxtbox(false)))*/Ltxtbox(false) + " Centavos ";
+                }
                 richTextBox1->Text = TooSystemString(decimal);
             }
             else
