@@ -215,7 +215,7 @@ string Cnumero(char* Nu)
     for (int i = 0; i < palabra.size(); i++)
     {
         l = 0;
-        for (int k = 0; k < 9; k++)
+        for (int k = 0; k < 10; k++)
         {
 
             if (palabra[i] == numero[k])
@@ -454,9 +454,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
         string entero = LeerEntreLlaves(stoi(Ltxtbox(true)));
         if (ns - ds)
         {
-            if ((ns-ds) <= 0.999999999)
+            string l = Ltxtbox(false);
+            int m = stoi(l);
+            if (m <= 999999999)
             {
-                string decimal = entero + " punto " + LeerEntreLlaves(stoi(Ltxtbox(false)));
+               
+                
+                string decimal = entero + " Con " + LeerEntreLlaves(stoi(Ltxtbox(false)))/*Ltxtbox(false) */+ " Centavos ";
                 richTextBox1->Text = TooSystemString(decimal);
             }
             else
