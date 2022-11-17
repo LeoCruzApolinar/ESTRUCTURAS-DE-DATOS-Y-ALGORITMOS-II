@@ -1,7 +1,18 @@
 #pragma once
+/*
+Enunciado    :    De numeros a letras 
+Equipo       :
+Participantes:    Victor Santos	         ID:  1105977
+                  Alexa  Guzmán          ID:  1101488
+                  José L. Cruz           ID:  1106529
+                  Eros Bencosme          ID:  1104510
+                  Manuel Mancebo		 ID:  1105614
+Fecha        :    17/11/2022
+Materia      :    Laboratorio Estructura de Datos y Algoritmos II
+Profesor     :    Casimiro Gilberto Cordero Ramirez
+*/
 
-// uncomment to execute the rk1-utils:
-//    #include "rk1_Utils_demo.h"  // shows how the rk1-utils can be used
+
 
 #include "Header1.h"
 #include "Header2.h"
@@ -151,7 +162,7 @@ namespace CppCLRWinFormsProject {
     }
 #pragma endregion
      
-void Conexion()
+void Conexion()//Conexion co n el ocumento diccionario
 {
     ifstream Diccionario; // Nombre de la conexion
     Diccionario.open("Diccionario/Diccionario.txt"); // Abre la conexion con el archivo de texto
@@ -159,12 +170,12 @@ void Conexion()
     DArchivoTxT = DArchivo.str(); // Se guarda en la variable string
     /*  richTextBox1->Text = TooSystemString(DArchivoTxT);*/
 }
- private: static String^ TooSystemString(string str)
+ private: static String^ TooSystemString(string str)//Normalizar el texto que se ingresa en los texbox
  {
      return  gcnew String(str.c_str());
 
  }
-public: static string toStandardString(System::String^ string)
+public: static string toStandardString(System::String^ string)//Normaliza los string para que los txtbox sean capaz de leerlo
 {
        using System::Runtime::InteropServices::Marshal;
        System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
@@ -174,13 +185,8 @@ public: static string toStandardString(System::String^ string)
        return returnString;
 
 }
-int TamanoDelArreglo(int a, int b)
-{
-          int z = 0;
-          z = b - a;
-          return z;
-}
-string Cletra(char* Nu)
+
+string Cletra(char* Nu) //limpia las cadenas de char que contienen letras
 {
     char abc[53] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',' '};
     string palabra(Nu);
@@ -207,7 +213,7 @@ string Cletra(char* Nu)
     }
     return palabra;
 }
-string Cnumero(char* Nu)
+string Cnumero(char* Nu)//limpia las cadenas de char que contienen numeros
 {
     char numero[10] = { '1', '2', '3', '4', '5', '6', '7', '8', '9','0'};
     string palabra(Nu);
@@ -234,10 +240,10 @@ string Cnumero(char* Nu)
     }
     return palabra;
 }
-string Ltxtbox(bool V)
+string Ltxtbox(bool V)//Divide la parte decimal de la parte entera
 {
     string texbox = toStandardString(textBox1->Text);
-    texbox.erase(std::remove(texbox.begin(), texbox.end(), ','), texbox.end());
+    texbox.erase(std::remove(texbox.begin(), texbox.end(), ','), texbox.end());//Elimia las comas para el sistema
     char* enteroCH;
     char* decimalCH;
     int c = 0;
@@ -247,7 +253,7 @@ string Ltxtbox(bool V)
     string entero;
     enteroCH = new char[texbox.size()];
     decimalCH = new char[texbox.size()];
-    for (int i = 0; i < texbox.size(); i++)
+    for (int i = 0; i < texbox.size(); i++)//Verifica si tiene un punto y por ende tiene un decimal
     {
         if(texbox[i]=='.')
         {
@@ -279,7 +285,7 @@ string Ltxtbox(bool V)
     }
 
 }
-string LeerEntreLlaves(int Nvalidador)
+string LeerEntreLlaves(int Nvalidador)// verifica si el numero ingresado por el usuario ya esta ingresado en el sistema en caso de no  estarlo, lo genera.
 {
      char* NumeroV;
      int Ubicacion;
@@ -287,11 +293,11 @@ string LeerEntreLlaves(int Nvalidador)
  
     for (int i = 0; i < DArchivoTxT.size(); i++)
     {
-        if (DArchivoTxT[i]=='{')
+        if (DArchivoTxT[i]=='{')// bucasca {
         {
             for(int A = i+1; A < DArchivoTxT.size(); A++)
             {
-                if (DArchivoTxT[A]=='}')
+                if (DArchivoTxT[A]=='}')//busca }
                 {
                     NumeroV = new char[(A)-(i+1)];
                     int C = 0;
@@ -302,7 +308,7 @@ string LeerEntreLlaves(int Nvalidador)
                     }
                     string n(NumeroV);
                     int Numero = stoi(n);
-                    if (Numero == Nvalidador)
+                    if (Numero == Nvalidador)//valida si el numero que el usuario ingreso esa en diccionario
                     {
                         Compuesto = false;
                         Ubicacion = A+1;
@@ -315,11 +321,11 @@ string LeerEntreLlaves(int Nvalidador)
         }
     }
     delete[]NumeroV;
-    if (Compuesto == false)
+    if (Compuesto == false)//si el numero que ingreso el usuario es encontrado en diccionario pues solo queda imprimir.
     {
         return LeerEntreCorchetes(Ubicacion, false);
     }
-    else
+    else//si no el numero se va dividiendo y con esto se generan los numero faltantes.
     {
        return Unidades(Nvalidador);
     }
@@ -398,7 +404,7 @@ string Unidades(int x)
 
     
 }
-string LeerEntreCorchetes(int ubicacion, bool compuesto)
+string LeerEntreCorchetes(int ubicacion, bool compuesto)// lee la parte de texto  del diccionario
 {
     string palabara;
     char* P;
