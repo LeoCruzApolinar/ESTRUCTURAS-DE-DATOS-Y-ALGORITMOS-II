@@ -1,16 +1,5 @@
 #pragma once
-/*
-Enunciado    :    De numeros a letras 
-Equipo       :
-Participantes:    Victor Santos	         ID:  1105977
-                  Alexa  Guzmán          ID:  1101488
-                  José L. Cruz           ID:  1106529
-                  Eros Bencosme          ID:  1104510
-                  Manuel Mancebo		 ID:  1105614
-Fecha        :    17/11/2022
-Materia      :    Laboratorio Estructura de Datos y Algoritmos II
-Profesor     :    Casimiro Gilberto Cordero Ramirez
-*/
+
 
 
 
@@ -364,14 +353,31 @@ string Unidades(int x)
     {
         int k = x / 1000000;
         l = x - (k * 1000000);
-        if (l == 0)
+        if (k == 1)
         {
-            n = LeerEntreLlaves(k) + " millones ";
+            
+            if (l == 0)
+            {
+                n = "Un millon ";
+            }
+            else
+            {
+                n = "Un millon " + LeerEntreLlaves(l);;
+            }
+       
         }
         else
         {
-            n = LeerEntreLlaves(k) + " millones " + LeerEntreLlaves(l);
+            if (l == 0)
+            {
+                n = LeerEntreLlaves(k) + " millones ";
+            }
+            else
+            {
+                n = LeerEntreLlaves(k) + " millones " + LeerEntreLlaves(l);
+            }
         }
+       
     }
     else if (x > 1999)
     {
@@ -493,7 +499,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
         {
             richTextBox1->Text = TooSystemString(entero);
         }
-        textBox1->Text = "";
+      /*  textBox1->Text = "";*/
     }
   
    
