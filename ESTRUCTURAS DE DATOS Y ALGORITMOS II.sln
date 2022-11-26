@@ -7,6 +7,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TresEnLinea", "TresEnLinea\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CovertirNumeroALeotra", "CovertirNumeroALeotra\CovertirNumeroALeotra.vcxproj", "{42449822-40DD-482C-80D9-CCB959F83897}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{1FA1CFEA-A5BF-42D9-AC51-BE9260FB628D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consola", "Consola", "{9E4E5BC5-3059-4DD7-8D44-F3E8F5A56AF9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LaCadenaMasLarga", "LaCadenaMasLarga\LaCadenaMasLarga.vcxproj", "{F42B32DA-2A18-4704-9C9C-DB84F674CB44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{28BD1E2D-5273-499F-8797-D2118E945F95}"
+	ProjectSection(SolutionItems) = preProject
+		Apuntes.txt = Apuntes.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,9 +42,22 @@ Global
 		{42449822-40DD-482C-80D9-CCB959F83897}.Release|x64.Build.0 = Release|x64
 		{42449822-40DD-482C-80D9-CCB959F83897}.Release|x86.ActiveCfg = Release|Win32
 		{42449822-40DD-482C-80D9-CCB959F83897}.Release|x86.Build.0 = Release|Win32
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44}.Debug|x64.ActiveCfg = Debug|x64
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44}.Debug|x64.Build.0 = Debug|x64
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44}.Debug|x86.ActiveCfg = Debug|Win32
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44}.Debug|x86.Build.0 = Debug|Win32
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44}.Release|x64.ActiveCfg = Release|x64
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44}.Release|x64.Build.0 = Release|x64
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44}.Release|x86.ActiveCfg = Release|Win32
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BA4A2FB0-0CEB-448F-B7DC-68F2BBD24AF3} = {1FA1CFEA-A5BF-42D9-AC51-BE9260FB628D}
+		{42449822-40DD-482C-80D9-CCB959F83897} = {1FA1CFEA-A5BF-42D9-AC51-BE9260FB628D}
+		{F42B32DA-2A18-4704-9C9C-DB84F674CB44} = {9E4E5BC5-3059-4DD7-8D44-F3E8F5A56AF9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {762443CA-F58D-4667-AFAE-B53BE2B03807}

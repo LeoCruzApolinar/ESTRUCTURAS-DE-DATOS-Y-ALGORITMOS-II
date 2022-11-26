@@ -82,6 +82,7 @@ namespace CppCLRWinFormsProject {
     private: System::Windows::Forms::Label^ label6;
     private: System::Windows::Forms::Label^ label7;
 
+
     protected:
 
     private:
@@ -291,11 +292,11 @@ namespace CppCLRWinFormsProject {
             // 
             this->tableLayoutPanel2->ColumnCount = 3;
             this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-                33.33333F)));
+                25)));
             this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-                33.33333F)));
+                25)));
             this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-                33.33333F)));
+                25)));
             this->tableLayoutPanel2->Controls->Add(this->JugadorVsjugador, 2, 0);
             this->tableLayoutPanel2->Controls->Add(this->JVSC, 1, 0);
             this->tableLayoutPanel2->Controls->Add(this->button10, 0, 0);
@@ -316,7 +317,7 @@ namespace CppCLRWinFormsProject {
             this->JugadorVsjugador->ForeColor = System::Drawing::Color::White;
             this->JugadorVsjugador->Location = System::Drawing::Point(675, 3);
             this->JugadorVsjugador->Name = L"JugadorVsjugador";
-            this->JugadorVsjugador->Size = System::Drawing::Size(326, 94);
+            this->JugadorVsjugador->Size = System::Drawing::Size(330, 94);
             this->JugadorVsjugador->TabIndex = 2;
             this->JugadorVsjugador->Text = L"Jugador vs jugador";
             this->JugadorVsjugador->UseVisualStyleBackColor = false;
@@ -346,7 +347,7 @@ namespace CppCLRWinFormsProject {
             this->button10->ForeColor = System::Drawing::Color::White;
             this->button10->Location = System::Drawing::Point(3, 3);
             this->button10->Name = L"button10";
-            this->button10->Size = System::Drawing::Size(326, 94);
+            this->button10->Size = System::Drawing::Size(330, 94);
             this->button10->TabIndex = 0;
             this->button10->Text = L"Reiniciar";
             this->button10->UseVisualStyleBackColor = false;
@@ -469,7 +470,7 @@ namespace CppCLRWinFormsProject {
             this->Controls->Add(this->tableLayoutPanel1);
             this->Controls->Add(this->label1);
             this->Controls->Add(this->tableLayoutPanel2);
-            this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
+            this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
             this->Margin = System::Windows::Forms::Padding(4);
             this->Name = L"Form1";
             this->Text = L"Form1";

@@ -1,0 +1,27 @@
+Paradigmas para resolucion de problemas:
+
+.Divide y venceras
+.Fuerza Bruta
+.Algoritmo voraces (Golosidad)
+{
+
+	86(25, 10, 5, 1)
+	{
+
+	86/25 = 3
+	85 - (25*3) = 11
+	11/10 = 1
+	11 - (10*1)=1
+	1/1=1
+	1-(1*1)= 0 fin
+
+	}
+
+
+}
+tipos de algoritmo voraces
+Kruskal
+Algoritmo de prim4
+Algoritmo de Dijkstra
+Triangulacion Voraz
+ojeto arista y vertices
