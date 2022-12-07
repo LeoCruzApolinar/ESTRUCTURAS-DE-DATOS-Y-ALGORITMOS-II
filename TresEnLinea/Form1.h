@@ -6,6 +6,12 @@
 #include "Header1.h"
 #include "Header2.h"
 #include <vcruntime_string.h>
+#include <stdlib.h>
+#include <iostream>
+#include <fstream>
+#include <streambuf>
+#include<sstream>
+#include<process.h>
 
 namespace CppCLRWinFormsProject {
 
@@ -15,6 +21,7 @@ namespace CppCLRWinFormsProject {
     using namespace System::Windows::Forms;
     using namespace System::Data;
     using namespace System::Drawing;
+    using namespace std;
 
 
     // variable 
@@ -24,9 +31,13 @@ namespace CppCLRWinFormsProject {
     bool DosJugadore;
     int Turno = 1;
     bool IA;
+    bool online;
     int IATurno;
     int Vx = 0;
     int Vo = 0;
+    string ConfigtTxT;
+    string datos;
+    int timela = 0;
     //PAZ
     
 
@@ -81,6 +92,22 @@ namespace CppCLRWinFormsProject {
     private: System::Windows::Forms::Button^ button11;
     private: System::Windows::Forms::Label^ label6;
     private: System::Windows::Forms::Label^ label7;
+    private: System::Windows::Forms::Button^ BTNOnline;
+    private: System::Windows::Forms::Timer^ timer1;
+    private: System::Windows::Forms::Panel^ panel1;
+    private: System::Windows::Forms::Label^ label8;
+    private: System::Windows::Forms::TextBox^ textBox1;
+    private: System::Windows::Forms::Button^ Unirse;
+    private: System::Windows::Forms::Button^ CrearPartida;
+    private: System::Windows::Forms::Label^ label9;
+    private: System::Windows::Forms::Button^ cambiarnm;
+    private: System::Windows::Forms::Button^ cambiarnombre2;
+    private: System::Windows::Forms::TextBox^ textBox2;
+    private: System::Windows::Forms::TextBox^ textBox3;
+
+
+    private: System::ComponentModel::IContainer^ components;
+
 
 
     protected:
@@ -89,8 +116,6 @@ namespace CppCLRWinFormsProject {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        System::ComponentModel::Container^ components;
-
 #pragma region Windows Form Designer generated code
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -98,6 +123,7 @@ namespace CppCLRWinFormsProject {
         /// </summary>
         void InitializeComponent(void)
         {
+            this->components = (gcnew System::ComponentModel::Container());
             this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
             this->button9 = (gcnew System::Windows::Forms::Button());
             this->button8 = (gcnew System::Windows::Forms::Button());
@@ -109,6 +135,7 @@ namespace CppCLRWinFormsProject {
             this->button1 = (gcnew System::Windows::Forms::Button());
             this->button5 = (gcnew System::Windows::Forms::Button());
             this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
+            this->BTNOnline = (gcnew System::Windows::Forms::Button());
             this->JugadorVsjugador = (gcnew System::Windows::Forms::Button());
             this->JVSC = (gcnew System::Windows::Forms::Button());
             this->button10 = (gcnew System::Windows::Forms::Button());
@@ -120,8 +147,20 @@ namespace CppCLRWinFormsProject {
             this->button11 = (gcnew System::Windows::Forms::Button());
             this->label6 = (gcnew System::Windows::Forms::Label());
             this->label7 = (gcnew System::Windows::Forms::Label());
+            this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+            this->panel1 = (gcnew System::Windows::Forms::Panel());
+            this->label9 = (gcnew System::Windows::Forms::Label());
+            this->label8 = (gcnew System::Windows::Forms::Label());
+            this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+            this->Unirse = (gcnew System::Windows::Forms::Button());
+            this->CrearPartida = (gcnew System::Windows::Forms::Button());
+            this->cambiarnm = (gcnew System::Windows::Forms::Button());
+            this->cambiarnombre2 = (gcnew System::Windows::Forms::Button());
+            this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+            this->textBox3 = (gcnew System::Windows::Forms::TextBox());
             this->tableLayoutPanel1->SuspendLayout();
             this->tableLayoutPanel2->SuspendLayout();
+            this->panel1->SuspendLayout();
             this->SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -290,13 +329,16 @@ namespace CppCLRWinFormsProject {
             // 
             // tableLayoutPanel2
             // 
-            this->tableLayoutPanel2->ColumnCount = 3;
+            this->tableLayoutPanel2->ColumnCount = 4;
             this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
                 25)));
             this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
                 25)));
             this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
                 25)));
+            this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+                25)));
+            this->tableLayoutPanel2->Controls->Add(this->BTNOnline, 3, 0);
             this->tableLayoutPanel2->Controls->Add(this->JugadorVsjugador, 2, 0);
             this->tableLayoutPanel2->Controls->Add(this->JVSC, 1, 0);
             this->tableLayoutPanel2->Controls->Add(this->button10, 0, 0);
@@ -305,8 +347,24 @@ namespace CppCLRWinFormsProject {
             this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
             this->tableLayoutPanel2->RowCount = 1;
             this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
-            this->tableLayoutPanel2->Size = System::Drawing::Size(1008, 100);
+            this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 100)));
+            this->tableLayoutPanel2->Size = System::Drawing::Size(1031, 100);
             this->tableLayoutPanel2->TabIndex = 1;
+            // 
+            // BTNOnline
+            // 
+            this->BTNOnline->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+                static_cast<System::Int32>(static_cast<System::Byte>(64)));
+            this->BTNOnline->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->BTNOnline->ForeColor = System::Drawing::Color::White;
+            this->BTNOnline->Location = System::Drawing::Point(774, 3);
+            this->BTNOnline->Name = L"BTNOnline";
+            this->BTNOnline->Size = System::Drawing::Size(246, 94);
+            this->BTNOnline->TabIndex = 3;
+            this->BTNOnline->Text = L"Online";
+            this->BTNOnline->UseVisualStyleBackColor = false;
+            this->BTNOnline->Click += gcnew System::EventHandler(this, &Form1::BTNOnline_Click);
             // 
             // JugadorVsjugador
             // 
@@ -315,9 +373,9 @@ namespace CppCLRWinFormsProject {
             this->JugadorVsjugador->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
             this->JugadorVsjugador->ForeColor = System::Drawing::Color::White;
-            this->JugadorVsjugador->Location = System::Drawing::Point(675, 3);
+            this->JugadorVsjugador->Location = System::Drawing::Point(517, 3);
             this->JugadorVsjugador->Name = L"JugadorVsjugador";
-            this->JugadorVsjugador->Size = System::Drawing::Size(330, 94);
+            this->JugadorVsjugador->Size = System::Drawing::Size(246, 94);
             this->JugadorVsjugador->TabIndex = 2;
             this->JugadorVsjugador->Text = L"Jugador vs jugador";
             this->JugadorVsjugador->UseVisualStyleBackColor = false;
@@ -330,9 +388,9 @@ namespace CppCLRWinFormsProject {
             this->JVSC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->JVSC->ForeColor = System::Drawing::Color::White;
-            this->JVSC->Location = System::Drawing::Point(339, 3);
+            this->JVSC->Location = System::Drawing::Point(260, 3);
             this->JVSC->Name = L"JVSC";
-            this->JVSC->Size = System::Drawing::Size(330, 94);
+            this->JVSC->Size = System::Drawing::Size(246, 94);
             this->JVSC->TabIndex = 1;
             this->JVSC->Text = L"Jugador vs computador";
             this->JVSC->UseVisualStyleBackColor = false;
@@ -347,7 +405,7 @@ namespace CppCLRWinFormsProject {
             this->button10->ForeColor = System::Drawing::Color::White;
             this->button10->Location = System::Drawing::Point(3, 3);
             this->button10->Name = L"button10";
-            this->button10->Size = System::Drawing::Size(330, 94);
+            this->button10->Size = System::Drawing::Size(246, 94);
             this->button10->TabIndex = 0;
             this->button10->Text = L"Reiniciar";
             this->button10->UseVisualStyleBackColor = false;
@@ -386,7 +444,7 @@ namespace CppCLRWinFormsProject {
             this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label3->ForeColor = System::Drawing::Color::White;
-            this->label3->Location = System::Drawing::Point(957, 123);
+            this->label3->Location = System::Drawing::Point(968, 136);
             this->label3->Name = L"label3";
             this->label3->Size = System::Drawing::Size(37, 36);
             this->label3->TabIndex = 5;
@@ -406,9 +464,10 @@ namespace CppCLRWinFormsProject {
             // label5
             // 
             this->label5->AutoSize = true;
+            this->label5->BackColor = System::Drawing::Color::Transparent;
             this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label5->Location = System::Drawing::Point(820, 132);
+            this->label5->Location = System::Drawing::Point(842, 145);
             this->label5->Name = L"label5";
             this->label5->Size = System::Drawing::Size(120, 25);
             this->label5->TabIndex = 7;
@@ -435,7 +494,7 @@ namespace CppCLRWinFormsProject {
             this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label6->ForeColor = System::Drawing::Color::White;
-            this->label6->Location = System::Drawing::Point(51, 187);
+            this->label6->Location = System::Drawing::Point(12, 184);
             this->label6->Name = L"label6";
             this->label6->Size = System::Drawing::Size(42, 46);
             this->label6->TabIndex = 9;
@@ -448,18 +507,136 @@ namespace CppCLRWinFormsProject {
             this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label7->ForeColor = System::Drawing::Color::White;
-            this->label7->Location = System::Drawing::Point(909, 178);
+            this->label7->Location = System::Drawing::Point(966, 197);
             this->label7->Name = L"label7";
             this->label7->Size = System::Drawing::Size(42, 46);
             this->label7->TabIndex = 10;
             this->label7->Text = L"0";
+            // 
+            // timer1
+            // 
+            this->timer1->Interval = 3000;
+            this->timer1->Tick += gcnew System::EventHandler(this, &Form1::timer1_Tick);
+            // 
+            // panel1
+            // 
+            this->panel1->Controls->Add(this->label9);
+            this->panel1->Controls->Add(this->label8);
+            this->panel1->Controls->Add(this->textBox1);
+            this->panel1->Controls->Add(this->Unirse);
+            this->panel1->Controls->Add(this->CrearPartida);
+            this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->panel1->Location = System::Drawing::Point(0, 100);
+            this->panel1->Name = L"panel1";
+            this->panel1->Size = System::Drawing::Size(1031, 763);
+            this->panel1->TabIndex = 11;
+            // 
+            // label9
+            // 
+            this->label9->AutoSize = true;
+            this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label9->ForeColor = System::Drawing::Color::Maroon;
+            this->label9->Location = System::Drawing::Point(386, 68);
+            this->label9->Name = L"label9";
+            this->label9->Size = System::Drawing::Size(103, 38);
+            this->label9->TabIndex = 4;
+            this->label9->Text = L"label9";
+            // 
+            // label8
+            // 
+            this->label8->AutoSize = true;
+            this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label8->ForeColor = System::Drawing::Color::Black;
+            this->label8->Location = System::Drawing::Point(387, 223);
+            this->label8->Name = L"label8";
+            this->label8->Size = System::Drawing::Size(268, 36);
+            this->label8->TabIndex = 3;
+            this->label8->Text = L"Codigo para unirse";
+            // 
+            // textBox1
+            // 
+            this->textBox1->Location = System::Drawing::Point(372, 265);
+            this->textBox1->Name = L"textBox1";
+            this->textBox1->Size = System::Drawing::Size(297, 22);
+            this->textBox1->TabIndex = 2;
+            // 
+            // Unirse
+            // 
+            this->Unirse->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+                static_cast<System::Int32>(static_cast<System::Byte>(64)));
+            this->Unirse->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->Unirse->ForeColor = System::Drawing::Color::White;
+            this->Unirse->Location = System::Drawing::Point(372, 319);
+            this->Unirse->Name = L"Unirse";
+            this->Unirse->Size = System::Drawing::Size(297, 73);
+            this->Unirse->TabIndex = 1;
+            this->Unirse->Text = L"Unirse";
+            this->Unirse->UseVisualStyleBackColor = false;
+            this->Unirse->Click += gcnew System::EventHandler(this, &Form1::Unirse_Click);
+            // 
+            // CrearPartida
+            // 
+            this->CrearPartida->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+                static_cast<System::Int32>(static_cast<System::Byte>(64)));
+            this->CrearPartida->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 22.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->CrearPartida->ForeColor = System::Drawing::Color::White;
+            this->CrearPartida->Location = System::Drawing::Point(372, 121);
+            this->CrearPartida->Name = L"CrearPartida";
+            this->CrearPartida->Size = System::Drawing::Size(297, 73);
+            this->CrearPartida->TabIndex = 0;
+            this->CrearPartida->Text = L"Crear Partida";
+            this->CrearPartida->UseVisualStyleBackColor = false;
+            this->CrearPartida->Click += gcnew System::EventHandler(this, &Form1::CrearPartida_Click);
+            // 
+            // cambiarnm
+            // 
+            this->cambiarnm->Location = System::Drawing::Point(171, 145);
+            this->cambiarnm->Name = L"cambiarnm";
+            this->cambiarnm->Size = System::Drawing::Size(27, 23);
+            this->cambiarnm->TabIndex = 12;
+            this->cambiarnm->Text = L"E";
+            this->cambiarnm->UseVisualStyleBackColor = true;
+            this->cambiarnm->Click += gcnew System::EventHandler(this, &Form1::cambiarnm_Click);
+            // 
+            // cambiarnombre2
+            // 
+            this->cambiarnombre2->Location = System::Drawing::Point(809, 145);
+            this->cambiarnombre2->Name = L"cambiarnombre2";
+            this->cambiarnombre2->Size = System::Drawing::Size(27, 23);
+            this->cambiarnombre2->TabIndex = 13;
+            this->cambiarnombre2->Text = L"E";
+            this->cambiarnombre2->UseVisualStyleBackColor = true;
+            this->cambiarnombre2->Click += gcnew System::EventHandler(this, &Form1::cambiarnombre2_Click);
+            // 
+            // textBox2
+            // 
+            this->textBox2->Location = System::Drawing::Point(59, 120);
+            this->textBox2->Name = L"textBox2";
+            this->textBox2->Size = System::Drawing::Size(106, 22);
+            this->textBox2->TabIndex = 14;
+            // 
+            // textBox3
+            // 
+            this->textBox3->Location = System::Drawing::Point(847, 120);
+            this->textBox3->Name = L"textBox3";
+            this->textBox3->Size = System::Drawing::Size(112, 22);
+            this->textBox3->TabIndex = 15;
             // 
             // Form1
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::White;
-            this->ClientSize = System::Drawing::Size(1008, 863);
+            this->ClientSize = System::Drawing::Size(1031, 863);
+            this->Controls->Add(this->panel1);
+            this->Controls->Add(this->textBox3);
+            this->Controls->Add(this->textBox2);
+            this->Controls->Add(this->cambiarnombre2);
+            this->Controls->Add(this->cambiarnm);
             this->Controls->Add(this->label7);
             this->Controls->Add(this->label6);
             this->Controls->Add(this->button11);
@@ -477,29 +654,32 @@ namespace CppCLRWinFormsProject {
             this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
             this->tableLayoutPanel1->ResumeLayout(false);
             this->tableLayoutPanel2->ResumeLayout(false);
+            this->panel1->ResumeLayout(false);
+            this->panel1->PerformLayout();
             this->ResumeLayout(false);
             this->PerformLayout();
 
         }
 
 #pragma endregion
-        int TurnoJugador(int N)
+    int TurnoJugador(int N)//Determina cual jugador jugo
         {
             if (N == 1)
             {
-                return X;
+                return X; //Retorna la variable X que es igual a -1, x = -1
             }
             else
             {
-                return O;
+                return O; //Retorna la variable O que es igual a 1, O = 1
             }
         }
-        void AgregarAlTablero(int A, int B, int C)
+    void AgregarAlTablero(int A, int B, int C)
         {
-            if (Verificar(A, B))
+            if (Verificar(A, B))//Verifica si la matriz esta ocupada
             {
-
-                Matriz[A][B] = TurnoJugador(C);
+                //A = Fila
+                //B = Columna
+                Matriz[A][B] = TurnoJugador(C); // TurnoJugador = O o TurnoJugador = X dependiendo del turno jugado
                 if (IATurno == 2)
                 {
                     verificarvictoria(Matriz);
@@ -512,9 +692,9 @@ namespace CppCLRWinFormsProject {
 
             }
         }
-        bool Verificar(int Z, int Y)
+    bool Verificar(int X, int Y)//Verifica si la matriz esta ocupada
         {
-            if (Matriz[Z][Y] == 0)
+            if (Matriz[X][Y] == 0)
             {
                 return true;
             }
@@ -525,15 +705,17 @@ namespace CppCLRWinFormsProject {
 
             }
         }
-        void convertir(int Cuadricula[3][3])
+    void convertir(int Cuadricula[3][3]) //Convierte la matriz a un arreglo
         {
             int E = 0;
             int b;
             int tablero[9];
-
-            for (int f = 0; f < 3; f++)
+            //F = fila
+            //C = Columna
+            //E = Casilla
+            for (int f = 0; f < 3; f++)//Recorre desde la Fila 0 hasta la 2
             {
-                for (int c = 0; c < 3; c++)
+                for (int c = 0; c < 3; c++)//Recorre desde la Columna 0 hasta la 2
                 {
 
                     if (c < E && c != E)
@@ -559,7 +741,7 @@ namespace CppCLRWinFormsProject {
             }
 
         }
-        int Ganar(int tablero[9])
+    int Ganar(int tablero[9])
         {
 
             unsigned gana[8][3] = { {0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6} };
@@ -577,7 +759,7 @@ namespace CppCLRWinFormsProject {
 
 
         }
-        int minimax(int tablero[9], int jugador) {
+    int minimax(int tablero[9], int jugador) {
 
             // ¿Cómo es la posición del jugador (su turno) a bordo?
             int ganador = Ganar(tablero);
@@ -600,7 +782,7 @@ namespace CppCLRWinFormsProject {
             if (movimiento == -1) return 0;
             return puntuacion;
         }
-        void maquinamovimiento(int tablero[9]) {
+    void maquinamovimiento(int tablero[9]) {
             int movimiento = -1;
             int puntuacion = -2;
             int i;
@@ -620,7 +802,7 @@ namespace CppCLRWinFormsProject {
             Ubicar(movimiento, 1);
             tablero[movimiento] = 1;
         }
-        void Ubicar(int n, int j)
+    void Ubicar(int n, int j)
         {
             int F;
             int C;
@@ -708,7 +890,7 @@ namespace CppCLRWinFormsProject {
                 break;
             }
         }
-        void deshabilitarBTN(bool l) {
+    void deshabilitarBTN(bool l) {
             button1->Enabled = l;
             button2->Enabled = l;
             button3->Enabled = l;
@@ -722,7 +904,7 @@ namespace CppCLRWinFormsProject {
 
 
         }
-        void limpiar()
+    void limpiar()
         {
 
             X = -1;
@@ -748,8 +930,9 @@ namespace CppCLRWinFormsProject {
             label6->Text = "0";
             label7->Text = "0";
             tableLayoutPanel1->Visible = true;
+
         }
-        void verificarvictoria(int Cuadricula[3][3])
+    void verificarvictoria(int Cuadricula[3][3])
         {
             int E = 0;
             int b;
@@ -774,81 +957,94 @@ namespace CppCLRWinFormsProject {
 
                 }
             }
-            unsigned gana[8][3] = { {0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6} };
+            unsigned gana[8][3] = { {0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6} }; //Formas de ganar
             for (int i = 0; i < 8; ++i) {
-                if (tablero[gana[i][0]] != 0 &&
+                if (tablero[gana[i][0]] != 0 && // Verifica que las casillas no esten vacias
                     tablero[gana[i][0]] == tablero[gana[i][1]] &&
-                    tablero[gana[i][0]] == tablero[gana[i][2]])
+                    tablero[gana[i][0]] == tablero[gana[i][2]])//Verifica si las casillas tienen las mismas fichas
                 {
-                    if (tablero[gana[i][0]] == -1)
+                    if (tablero[gana[i][0]] == -1)// Verifica si las casillas son iguales a -1, -1 = X
                     {
-                        label1->Text = "Ha ganado la X";
+                        label1->Text = "Ha ganado la X "+ "("+label4->Text+")";
                         label1->Enabled = true;
                         Vx++;
                         label6->Text = Vx.ToString();
                         deshabilitarBTN(false);
                        
-                        empate++;
+                      
                     }
-                    else
+                    else// Verifica si las casillas son iguales a 1, 1 = O
                     {
-                        label1->Text = "Ha ganado el O";
+                        label1->Text = "Ha ganado el O "+ "("+ label5->Text + ")";
                         label1->Enabled = true;
                         Vo++;
                         label7->Text = Vo.ToString();
                         deshabilitarBTN(false);
                     
-                        empate++;
+                     
                     }
 
                     
                 }
-                empate++;
+                else
+                {
+                    empate++;
+                }
+           
             }
 
             for (int i = 0; i < 9; i++)
             {
-                if(tablero[i] != 0)
+                if(tablero[i] != 0)//Verifica si la casilla esta ocupada
                 {
                     ocupacion++;
                 }
             }
-            if (ocupacion == 9)
+            if (ocupacion == 9 && empate == 8)//Si todas las casillas estan ocupadas y Si todas las formas de ganar fueron erroneas se produce un empate
             {
-                if (empate == 8)
-                {
+               
                     label1->Text = "El juego ha terminado en empate";
                     label1->Enabled = true;
-                }
             }
-            
-
         }
 
     private: System::Void JugadorVsjugador_Click(System::Object^ sender, System::EventArgs^ e)
     {
         limpiar();
         deshabilitarBTN(true);
+        label5->Text = "Jugador #2";
         DosJugadore = true;
+        panel1->Visible = false;
+        panel1->Enabled = false;
+        cambiarnombre2->Visible = true;
+        cambiarnm->Visible = true;
+        cambiarnombre2->Enabled = true;
+        cambiarnm->Enabled = true;
+        textBox2->Enabled = true;
+        textBox3->Enabled = true;
+        textBox2->Visible = true;
+        textBox3->Visible = true;
+        textBox2->Text = "";
+        textBox3->Text = "";
     }
     private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-        int F = 0;
-        int C = 0;
+        int F = 0;//fila
+        int C = 0;//Columna
         int N;
         if (Verificar(F, C))
         {
-            if (DosJugadore == true)
+            if (DosJugadore == true)//Verifica si estamos en el modo dos jugadores
             {
-                if (Turno == 1)
+                if (Turno == 1) //Verifica el primer turno
                 {
                     N = Turno;
-                    Turno = 2;
+                    Turno = 2;//Cede el turno al jugador 2
                     button1->Text = "X";
                 }
                 else
                 {
                     N = Turno;
-                    Turno = 1;
+                    Turno = 1;//Cede el turno al jugador 1
                     button1->Text = "O";
                 }
 
@@ -1122,20 +1318,50 @@ namespace CppCLRWinFormsProject {
         limpiar();
         deshabilitarBTN(true);
         IA = true;
+        label5->Text = "Computador";
+        panel1->Visible = false;
+        panel1->Enabled = false;
+        cambiarnombre2->Visible = false;
+        cambiarnm->Visible = false;
+        cambiarnombre2->Enabled = false;
+        cambiarnm->Enabled = false;
+        textBox2->Enabled = false;
+        textBox3->Enabled = false;
+        textBox2->Visible = false;
+        textBox3->Visible = false;
     }
     private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
         deshabilitarBTN(false);
         limpiar();
         tableLayoutPanel1->Visible = false;
         label1->Enabled = true;
-        label1->Text = "Sin modo de juego seleccionado";
+        panel1->Visible = false;
+        panel1->Enabled = false;
+        label1->Text = "Sin modo de juego seleccionado"; cambiarnombre2->Visible = false;
+        cambiarnm->Visible = false;
+        cambiarnombre2->Enabled = false;
+        cambiarnm->Enabled = false;
+        textBox2->Enabled = false;
+        textBox3->Enabled = false;
+        textBox2->Visible = false;
+        textBox3->Visible = false;
     }
     private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
         deshabilitarBTN(false);
         limpiar();
         tableLayoutPanel1->Visible = false;
         label1->Enabled = true;
+        panel1->Visible = false;
         label1->Text = "Sin modo de juego seleccionado";
+        panel1->Enabled = false;
+        cambiarnombre2->Visible = false;
+        cambiarnm->Visible = false;
+        cambiarnombre2->Enabled = false;
+        cambiarnm->Enabled = false;
+        textBox2->Enabled = false;
+        textBox3->Enabled = false;
+        textBox2->Visible = false;
+        textBox3->Visible = false;
 ;    }
     private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
         X = -1;
@@ -1156,6 +1382,217 @@ namespace CppCLRWinFormsProject {
         memset(Matriz, 0, sizeof(Matriz));
         deshabilitarBTN(true);
     }
+    private: System::Void BTNOnline_Click(System::Object^ sender, System::EventArgs^ e) 
+    {
+        //limpiar();
+        //deshabilitarBTN(true);
+        online = true;
+        panel1->Visible = true;
+        panel1->Enabled = true;
+        cambiarnombre2->Visible = false;
+        cambiarnm->Visible = false;
+        cambiarnombre2->Enabled = false;
+        cambiarnm->Enabled = false;
+        textBox2->Enabled = false;
+        textBox3->Enabled = false;
+        textBox2->Visible = false;
+        textBox3->Visible = false;
+       /* timer1->Start();*/
+        
+    }
+    private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
+    {
+        updata('3');
+        if (timela == 0)
+        {
+            system("D:/proyectosT/ea.txt");
+        }
+        Conexion();
+        if (timela == 0)
+        {
+            datos = ConfigtTxT;
+        }
+        else
+        {
+            if (ConfigtTxT != datos)
+            {
+                datos = ConfigtTxT;
+            }
+        }
+      
+        timela++;
+    }
+    void updata(char n)
+    {
+        Conexion();
+        ConfigtTxT[0] = n;
+        ofstream ofs("C:\\Users\\leona\\OneDrive\\Documentos\\ProyectosVisual\\ESTRUCTURAS DE DATOS Y ALGORITMOS II\\config.txt");
+        ofs <<ConfigtTxT;
+        ConfigtTxT = "";
+        ofs.close();
+    }
+    private: System::Void CrearPartida_Click(System::Object^ sender, System::EventArgs^ e) 
+    {
+
+    updata('1');
+    system("D:/proyectosT/ConexioBaseDeDatos.exe");
+    Conexion();
+    int size = ConfigtTxT.size();
+    char id[4];
+   
+    for (int i = 0; i < size; i++)
+    {
+        if (ConfigtTxT[i] == 'C')
+        {
+
+            for (int A = i + 1; A < size; A++)
+            {
+                if (ConfigtTxT[A] == '[')
+                {
+                    int s = 0;
+
+                    for (int B = A + 1; B < size; B++)
+                    {
+                        if (ConfigtTxT[B] == ']')
+                        {
+
+                            B = size;
+                            A = size;
+                            i = size;
+
+                        }
+                        else
+                        {
+
+                            id[s] = ConfigtTxT[B];
+                            s++;
+
+
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+    }
+    string c = id;
+    label9->Text = TooSystemString(c);
+    CrearPartida->Enabled = false;
+    timer1->Start();
+    }
+    void Conexion()//Conexion co n el ocumento diccionario
+    {
+           stringstream Configt;
+           ifstream config; // Nombre de la conexion
+           config.open("C:\\Users\\leona\\OneDrive\\Documentos\\ProyectosVisual\\ESTRUCTURAS DE DATOS Y ALGORITMOS II\\config.txt"); // Abre la conexion con el archivo de texto
+           Configt << config.rdbuf(); // Retorna un puntero, normaliza el texto
+           ConfigtTxT = Configt.str(); // Se guarda en la variable string
+           /*  richTextBox1->Text = TooSystemString(DArchivoTxT);*/
+           config.close();
+    }
+private: static String^ TooSystemString(string str)//Normalizar el texto que se ingresa en los texbox
+        {
+            return  gcnew String(str.c_str());
+
+        }
+public: static string toStandardString(System::String^ string)//Normaliza los string para que los txtbox sean capaz de leerlo
+{
+    using System::Runtime::InteropServices::Marshal;
+    System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
+    char* charPointer = reinterpret_cast<char*>(pointer.ToPointer());
+    std::string returnString(charPointer, string->Length);
+    Marshal::FreeHGlobal(pointer);
+    return returnString;
+
+}
+private: System::Void Unirse_Click(System::Object^ sender, System::EventArgs^ e) {
+  
+    string id = toStandardString(textBox1->Text);
+    Conexion();
+    int size = ConfigtTxT.size();
+    if (id != "")
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (ConfigtTxT[i] == 'C')
+            {
+
+                for (int A = i + 1; A < size; A++)
+                {
+                    if (ConfigtTxT[A] == '[')
+                    {
+                        int s = 0;
+
+                        for (int B = A + 1; B < size; B++)
+                        {
+                            if (ConfigtTxT[B] == ']')
+                            {
+
+                                B = size;
+                                A = size;
+                                i = size;
+
+                            }
+                            else
+                            {
+
+                                ConfigtTxT[B] = id[s];
+                                s++;
+
+
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+        }
+        ofstream ofs("C:\\Users\\leona\\OneDrive\\Documentos\\ProyectosVisual\\ESTRUCTURAS DE DATOS Y ALGORITMOS II\\config.txt");
+        ofs << ConfigtTxT << endl;
+        ConfigtTxT = "";
+        ofs.close();
+        updata('2');
+        system("D:/proyectosT/ConexioBaseDeDatos.exe");
+        timer1->Start();
+    }
+    else
+    {
+     
+        MessageBox::Show("La id esta vacia");
+    }
+   
+
+}
+private: System::Void cambiarnm_Click(System::Object^ sender, System::EventArgs^ e) {
+    string a = toStandardString(textBox2->Text);
+    if (a == "")
+    {
+    MessageBox::Show("Ingrese un nombre");
+        
+    }
+    else
+    {
+        label4->Text = textBox2->Text;
+    }
+  
+}
+private: System::Void cambiarnombre2_Click(System::Object^ sender, System::EventArgs^ e) {
+    string a = toStandardString(textBox3->Text);
+    if (a == "")
+    {
+        MessageBox::Show("Ingrese un nombre");
+
+    }
+    else 
+    {
+        label5->Text = textBox3->Text;
+    }
+    
+}
 };
 }
 
