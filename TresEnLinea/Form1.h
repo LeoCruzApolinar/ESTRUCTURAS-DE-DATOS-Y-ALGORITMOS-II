@@ -23,7 +23,7 @@ namespace CppCLRWinFormsProject {
     using namespace System::Drawing;
     using namespace std;
 
-
+   
     // variable 
     int Matriz[3][3];
     int X = -1;
@@ -125,19 +125,19 @@ namespace CppCLRWinFormsProject {
         {
             this->components = (gcnew System::ComponentModel::Container());
             this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-            this->button9 = (gcnew System::Windows::Forms::Button());
             this->button8 = (gcnew System::Windows::Forms::Button());
-            this->button7 = (gcnew System::Windows::Forms::Button());
             this->button6 = (gcnew System::Windows::Forms::Button());
             this->button4 = (gcnew System::Windows::Forms::Button());
             this->button3 = (gcnew System::Windows::Forms::Button());
             this->button2 = (gcnew System::Windows::Forms::Button());
             this->button1 = (gcnew System::Windows::Forms::Button());
             this->button5 = (gcnew System::Windows::Forms::Button());
+            this->button7 = (gcnew System::Windows::Forms::Button());
+            this->button9 = (gcnew System::Windows::Forms::Button());
             this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
             this->JugadorVsjugador = (gcnew System::Windows::Forms::Button());
-            this->JVSC = (gcnew System::Windows::Forms::Button());
             this->button10 = (gcnew System::Windows::Forms::Button());
+            this->JVSC = (gcnew System::Windows::Forms::Button());
             this->label1 = (gcnew System::Windows::Forms::Label());
             this->label2 = (gcnew System::Windows::Forms::Label());
             this->label3 = (gcnew System::Windows::Forms::Label());
@@ -165,15 +165,15 @@ namespace CppCLRWinFormsProject {
                 33.33333F)));
             this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
                 33.33333F)));
-            this->tableLayoutPanel1->Controls->Add(this->button9, 2, 2);
             this->tableLayoutPanel1->Controls->Add(this->button8, 1, 2);
-            this->tableLayoutPanel1->Controls->Add(this->button7, 0, 2);
             this->tableLayoutPanel1->Controls->Add(this->button6, 2, 1);
             this->tableLayoutPanel1->Controls->Add(this->button4, 0, 1);
             this->tableLayoutPanel1->Controls->Add(this->button3, 2, 0);
             this->tableLayoutPanel1->Controls->Add(this->button2, 1, 0);
             this->tableLayoutPanel1->Controls->Add(this->button1, 0, 0);
             this->tableLayoutPanel1->Controls->Add(this->button5, 1, 1);
+            this->tableLayoutPanel1->Controls->Add(this->button7, 0, 2);
+            this->tableLayoutPanel1->Controls->Add(this->button9, 2, 2);
             this->tableLayoutPanel1->Location = System::Drawing::Point(202, 129);
             this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(0);
             this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
@@ -183,21 +183,6 @@ namespace CppCLRWinFormsProject {
             this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 33.33333F)));
             this->tableLayoutPanel1->Size = System::Drawing::Size(600, 600);
             this->tableLayoutPanel1->TabIndex = 0;
-            // 
-            // button9
-            // 
-            this->button9->BackColor = System::Drawing::Color::White;
-            this->button9->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-            this->button9->FlatAppearance->BorderSize = 5;
-            this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->button9->Location = System::Drawing::Point(401, 401);
-            this->button9->Name = L"button9";
-            this->button9->Size = System::Drawing::Size(194, 194);
-            this->button9->TabIndex = 8;
-            this->button9->UseVisualStyleBackColor = false;
-            this->button9->Click += gcnew System::EventHandler(this, &Form1::button9_Click);
             // 
             // button8
             // 
@@ -213,21 +198,6 @@ namespace CppCLRWinFormsProject {
             this->button8->TabIndex = 7;
             this->button8->UseVisualStyleBackColor = false;
             this->button8->Click += gcnew System::EventHandler(this, &Form1::button8_Click);
-            // 
-            // button7
-            // 
-            this->button7->BackColor = System::Drawing::Color::White;
-            this->button7->FlatAppearance->BorderColor = System::Drawing::Color::Black;
-            this->button7->FlatAppearance->BorderSize = 5;
-            this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->button7->Location = System::Drawing::Point(3, 401);
-            this->button7->Name = L"button7";
-            this->button7->Size = System::Drawing::Size(193, 194);
-            this->button7->TabIndex = 6;
-            this->button7->UseVisualStyleBackColor = false;
-            this->button7->Click += gcnew System::EventHandler(this, &Form1::button7_Click);
             // 
             // button6
             // 
@@ -319,6 +289,36 @@ namespace CppCLRWinFormsProject {
             this->button5->UseVisualStyleBackColor = false;
             this->button5->Click += gcnew System::EventHandler(this, &Form1::button5_Click);
             // 
+            // button7
+            // 
+            this->button7->BackColor = System::Drawing::Color::White;
+            this->button7->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+            this->button7->FlatAppearance->BorderSize = 5;
+            this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->button7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->button7->Location = System::Drawing::Point(3, 401);
+            this->button7->Name = L"button7";
+            this->button7->Size = System::Drawing::Size(193, 194);
+            this->button7->TabIndex = 6;
+            this->button7->UseVisualStyleBackColor = false;
+            this->button7->Click += gcnew System::EventHandler(this, &Form1::button7_Click);
+            // 
+            // button9
+            // 
+            this->button9->BackColor = System::Drawing::Color::White;
+            this->button9->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+            this->button9->FlatAppearance->BorderSize = 5;
+            this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->button9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 72, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->button9->Location = System::Drawing::Point(401, 401);
+            this->button9->Name = L"button9";
+            this->button9->Size = System::Drawing::Size(194, 194);
+            this->button9->TabIndex = 8;
+            this->button9->UseVisualStyleBackColor = false;
+            this->button9->Click += gcnew System::EventHandler(this, &Form1::button9_Click);
+            // 
             // tableLayoutPanel2
             // 
             this->tableLayoutPanel2->ColumnCount = 3;
@@ -331,8 +331,8 @@ namespace CppCLRWinFormsProject {
             this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
                 20)));
             this->tableLayoutPanel2->Controls->Add(this->JugadorVsjugador, 2, 0);
-            this->tableLayoutPanel2->Controls->Add(this->JVSC, 1, 0);
             this->tableLayoutPanel2->Controls->Add(this->button10, 0, 0);
+            this->tableLayoutPanel2->Controls->Add(this->JVSC, 1, 0);
             this->tableLayoutPanel2->Dock = System::Windows::Forms::DockStyle::Top;
             this->tableLayoutPanel2->Location = System::Drawing::Point(0, 0);
             this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
@@ -356,21 +356,6 @@ namespace CppCLRWinFormsProject {
             this->JugadorVsjugador->UseVisualStyleBackColor = false;
             this->JugadorVsjugador->Click += gcnew System::EventHandler(this, &Form1::JugadorVsjugador_Click);
             // 
-            // JVSC
-            // 
-            this->JVSC->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-                static_cast<System::Int32>(static_cast<System::Byte>(64)));
-            this->JVSC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->JVSC->ForeColor = System::Drawing::Color::White;
-            this->JVSC->Location = System::Drawing::Point(346, 3);
-            this->JVSC->Name = L"JVSC";
-            this->JVSC->Size = System::Drawing::Size(337, 94);
-            this->JVSC->TabIndex = 1;
-            this->JVSC->Text = L"Jugador vs computador";
-            this->JVSC->UseVisualStyleBackColor = false;
-            this->JVSC->Click += gcnew System::EventHandler(this, &Form1::JVSC_Click);
-            // 
             // button10
             // 
             this->button10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
@@ -385,6 +370,21 @@ namespace CppCLRWinFormsProject {
             this->button10->Text = L"Reiniciar";
             this->button10->UseVisualStyleBackColor = false;
             this->button10->Click += gcnew System::EventHandler(this, &Form1::button10_Click);
+            // 
+            // JVSC
+            // 
+            this->JVSC->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+                static_cast<System::Int32>(static_cast<System::Byte>(64)));
+            this->JVSC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->JVSC->ForeColor = System::Drawing::Color::White;
+            this->JVSC->Location = System::Drawing::Point(346, 3);
+            this->JVSC->Name = L"JVSC";
+            this->JVSC->Size = System::Drawing::Size(337, 94);
+            this->JVSC->TabIndex = 1;
+            this->JVSC->Text = L"Jugador vs computador";
+            this->JVSC->UseVisualStyleBackColor = false;
+            this->JVSC->Click += gcnew System::EventHandler(this, &Form1::JVSC_Click);
             // 
             // label1
             // 
@@ -419,7 +419,7 @@ namespace CppCLRWinFormsProject {
             this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label3->ForeColor = System::Drawing::Color::White;
-            this->label3->Location = System::Drawing::Point(968, 136);
+            this->label3->Location = System::Drawing::Point(982, 136);
             this->label3->Name = L"label3";
             this->label3->Size = System::Drawing::Size(37, 36);
             this->label3->TabIndex = 5;
@@ -447,6 +447,7 @@ namespace CppCLRWinFormsProject {
             this->label5->Size = System::Drawing::Size(120, 25);
             this->label5->TabIndex = 7;
             this->label5->Text = L"Computador";
+            this->label5->Click += gcnew System::EventHandler(this, &Form1::label5_Click);
             // 
             // button11
             // 
@@ -482,7 +483,7 @@ namespace CppCLRWinFormsProject {
             this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label7->ForeColor = System::Drawing::Color::White;
-            this->label7->Location = System::Drawing::Point(966, 197);
+            this->label7->Location = System::Drawing::Point(980, 184);
             this->label7->Name = L"label7";
             this->label7->Size = System::Drawing::Size(42, 46);
             this->label7->TabIndex = 10;
@@ -491,7 +492,6 @@ namespace CppCLRWinFormsProject {
             // timer1
             // 
             this->timer1->Interval = 3000;
-
             // 
             // cambiarnm
             // 
@@ -559,7 +559,8 @@ namespace CppCLRWinFormsProject {
 
         }
 
-#pragma endregion
+#pragma endregion 
+        //inicio
     int TurnoJugador(int N)//Determina cual jugador jugo
         {
             if (N == 1)
@@ -854,7 +855,8 @@ namespace CppCLRWinFormsProject {
                     tablero[E] = Cuadricula[f][c];
 
                 }
-            }
+            } 
+
             unsigned gana[8][3] = { {0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6} }; //Formas de ganar
             for (int i = 0; i < 8; ++i) {
                 if (tablero[gana[i][0]] != 0 && // Verifica que las casillas no esten vacias
@@ -868,7 +870,7 @@ namespace CppCLRWinFormsProject {
                         Vx++;
                         label6->Text = Vx.ToString();
                         deshabilitarBTN(false);
-                       
+                        i = 8;
                       
                     }
                     else// Verifica si las casillas son iguales a 1, 1 = O
@@ -878,7 +880,7 @@ namespace CppCLRWinFormsProject {
                         Vo++;
                         label7->Text = Vo.ToString();
                         deshabilitarBTN(false);
-                    
+                        i = 8;
                      
                     }
 
@@ -1315,6 +1317,8 @@ namespace CppCLRWinFormsProject {
         label5->Text = textBox3->Text;
     }
     
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
