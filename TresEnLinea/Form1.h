@@ -600,7 +600,7 @@ namespace CppCLRWinFormsProject {
             this->PerformLayout();
 
         }
-
+                
 #pragma endregion 
         //inicio
         int TurnoJugador(int N)//Determina cual jugador jugo
