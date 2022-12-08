@@ -38,7 +38,6 @@ namespace CppCLRWinFormsProject {
     string ConfigtTxT;
     string datos;
     int timela = 0;
-    //PAZ
     
 
     public ref class Form1 : public System::Windows::Forms::Form
