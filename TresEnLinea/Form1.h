@@ -1,4 +1,17 @@
 #pragma once
+/*
+Enunciado    :    Tic Tac Toe
+Equipo       :
+Participantes:    Adrian Bastardo        ID:  1105264
+                  Alexa  Guzmán          ID:  1101488
+                  José L. Cruz           ID:  1106529
+                  Eros Bencosme          ID:  1104510
+                  Manuel Mancebo         ID:  1105615
+                  Victo Santos           ID:  1105977
+Fecha        :    8/12/2022
+Materia      :    Laboratorio Estructura de Datos y Algoritmos II
+Profesor     :    Casimiro Gilberto Cordero Ramirez
+*/
 
 // uncomment to execute the rk1-utils:
 //    #include "rk1_Utils_demo.h"  // shows how the rk1-utils can be used
@@ -23,7 +36,7 @@ namespace CppCLRWinFormsProject {
     using namespace System::Drawing;
     using namespace std;
 
-   
+
     // variable 
     int Matriz[3][3];
     int X = -1;
@@ -38,7 +51,8 @@ namespace CppCLRWinFormsProject {
     string ConfigtTxT;
     string datos;
     int timela = 0;
-    
+
+
 
     public ref class Form1 : public System::Windows::Forms::Form
     {
@@ -103,6 +117,8 @@ namespace CppCLRWinFormsProject {
     private: System::Windows::Forms::Button^ cambiarnombre2;
     private: System::Windows::Forms::TextBox^ textBox2;
     private: System::Windows::Forms::TextBox^ textBox3;
+    private: System::Windows::Forms::Label^ label8;
+    private: System::Windows::Forms::Label^ label9;
 
 
     private: System::ComponentModel::IContainer^ components;
@@ -150,6 +166,8 @@ namespace CppCLRWinFormsProject {
             this->cambiarnombre2 = (gcnew System::Windows::Forms::Button());
             this->textBox2 = (gcnew System::Windows::Forms::TextBox());
             this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+            this->label8 = (gcnew System::Windows::Forms::Label());
+            this->label9 = (gcnew System::Windows::Forms::Label());
             this->tableLayoutPanel1->SuspendLayout();
             this->tableLayoutPanel2->SuspendLayout();
             this->SuspendLayout();
@@ -404,7 +422,7 @@ namespace CppCLRWinFormsProject {
             this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label2->ForeColor = System::Drawing::Color::White;
-            this->label2->Location = System::Drawing::Point(12, 132);
+            this->label2->Location = System::Drawing::Point(7, 188);
             this->label2->Name = L"label2";
             this->label2->Size = System::Drawing::Size(36, 36);
             this->label2->TabIndex = 4;
@@ -418,7 +436,7 @@ namespace CppCLRWinFormsProject {
             this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label3->ForeColor = System::Drawing::Color::White;
-            this->label3->Location = System::Drawing::Point(982, 136);
+            this->label3->Location = System::Drawing::Point(979, 179);
             this->label3->Name = L"label3";
             this->label3->Size = System::Drawing::Size(37, 36);
             this->label3->TabIndex = 5;
@@ -429,7 +447,7 @@ namespace CppCLRWinFormsProject {
             this->label4->AutoSize = true;
             this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label4->Location = System::Drawing::Point(54, 145);
+            this->label4->Location = System::Drawing::Point(49, 201);
             this->label4->Name = L"label4";
             this->label4->Size = System::Drawing::Size(111, 25);
             this->label4->TabIndex = 6;
@@ -441,7 +459,7 @@ namespace CppCLRWinFormsProject {
             this->label5->BackColor = System::Drawing::Color::Transparent;
             this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label5->Location = System::Drawing::Point(842, 145);
+            this->label5->Location = System::Drawing::Point(848, 188);
             this->label5->Name = L"label5";
             this->label5->Size = System::Drawing::Size(120, 25);
             this->label5->TabIndex = 7;
@@ -469,7 +487,7 @@ namespace CppCLRWinFormsProject {
             this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label6->ForeColor = System::Drawing::Color::White;
-            this->label6->Location = System::Drawing::Point(12, 184);
+            this->label6->Location = System::Drawing::Point(7, 240);
             this->label6->Name = L"label6";
             this->label6->Size = System::Drawing::Size(42, 46);
             this->label6->TabIndex = 9;
@@ -482,7 +500,7 @@ namespace CppCLRWinFormsProject {
             this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->label7->ForeColor = System::Drawing::Color::White;
-            this->label7->Location = System::Drawing::Point(980, 184);
+            this->label7->Location = System::Drawing::Point(977, 227);
             this->label7->Name = L"label7";
             this->label7->Size = System::Drawing::Size(42, 46);
             this->label7->TabIndex = 10;
@@ -494,7 +512,7 @@ namespace CppCLRWinFormsProject {
             // 
             // cambiarnm
             // 
-            this->cambiarnm->Location = System::Drawing::Point(171, 145);
+            this->cambiarnm->Location = System::Drawing::Point(166, 201);
             this->cambiarnm->Name = L"cambiarnm";
             this->cambiarnm->Size = System::Drawing::Size(27, 23);
             this->cambiarnm->TabIndex = 12;
@@ -504,7 +522,7 @@ namespace CppCLRWinFormsProject {
             // 
             // cambiarnombre2
             // 
-            this->cambiarnombre2->Location = System::Drawing::Point(809, 145);
+            this->cambiarnombre2->Location = System::Drawing::Point(815, 188);
             this->cambiarnombre2->Name = L"cambiarnombre2";
             this->cambiarnombre2->Size = System::Drawing::Size(27, 23);
             this->cambiarnombre2->TabIndex = 13;
@@ -514,17 +532,40 @@ namespace CppCLRWinFormsProject {
             // 
             // textBox2
             // 
-            this->textBox2->Location = System::Drawing::Point(59, 120);
+            this->textBox2->Location = System::Drawing::Point(54, 176);
             this->textBox2->Name = L"textBox2";
             this->textBox2->Size = System::Drawing::Size(106, 22);
             this->textBox2->TabIndex = 14;
+            this->textBox2->Tag = L"";
             // 
             // textBox3
             // 
-            this->textBox3->Location = System::Drawing::Point(847, 120);
+            this->textBox3->Location = System::Drawing::Point(853, 163);
             this->textBox3->Name = L"textBox3";
             this->textBox3->Size = System::Drawing::Size(112, 22);
             this->textBox3->TabIndex = 15;
+            // 
+            // label8
+            // 
+            this->label8->AutoSize = true;
+            this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label8->Location = System::Drawing::Point(73, 153);
+            this->label8->Name = L"label8";
+            this->label8->Size = System::Drawing::Size(68, 20);
+            this->label8->TabIndex = 16;
+            this->label8->Text = L"Nombre";
+            // 
+            // label9
+            // 
+            this->label9->AutoSize = true;
+            this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->label9->Location = System::Drawing::Point(872, 140);
+            this->label9->Name = L"label9";
+            this->label9->Size = System::Drawing::Size(68, 20);
+            this->label9->TabIndex = 17;
+            this->label9->Text = L"Nombre";
             // 
             // Form1
             // 
@@ -532,6 +573,8 @@ namespace CppCLRWinFormsProject {
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackColor = System::Drawing::Color::White;
             this->ClientSize = System::Drawing::Size(1031, 863);
+            this->Controls->Add(this->label9);
+            this->Controls->Add(this->label8);
             this->Controls->Add(this->textBox3);
             this->Controls->Add(this->textBox2);
             this->Controls->Add(this->cambiarnombre2);
@@ -560,7 +603,7 @@ namespace CppCLRWinFormsProject {
 
 #pragma endregion 
         //inicio
-    int TurnoJugador(int N)//Determina cual jugador jugo
+        int TurnoJugador(int N)//Determina cual jugador jugo
         {
             if (N == 1)
             {
@@ -571,13 +614,14 @@ namespace CppCLRWinFormsProject {
                 return O; //Retorna la variable O que es igual a 1, O = 1
             }
         }
-    void AgregarAlTablero(int A, int B, int C)
+        void AgregarAlTablero(int A, int B, int C)
         {
             if (Verificar(A, B))//Verifica si la matriz esta ocupada
             {
                 //A = Fila
                 //B = Columna
                 Matriz[A][B] = TurnoJugador(C); // TurnoJugador = O o TurnoJugador = X dependiendo del turno jugado
+
                 if (IATurno == 2)
                 {
                     verificarvictoria(Matriz);
@@ -590,7 +634,7 @@ namespace CppCLRWinFormsProject {
 
             }
         }
-    bool Verificar(int X, int Y)//Verifica si la matriz esta ocupada
+        bool Verificar(int X, int Y)//Verifica si la matriz esta ocupada
         {
             if (Matriz[X][Y] == 0)
             {
@@ -603,10 +647,9 @@ namespace CppCLRWinFormsProject {
 
             }
         }
-    void convertir(int Cuadricula[3][3]) //Convierte la matriz a un arreglo
+        void convertir(int Cuadricula[3][3]) //Convierte la matriz a un arreglo
         {
-            int E = 0;
-            int b;
+            int E = 0;//Aumento de las casillas
             int tablero[9];
             //F = fila
             //C = Columna
@@ -615,16 +658,8 @@ namespace CppCLRWinFormsProject {
             {
                 for (int c = 0; c < 3; c++)//Recorre desde la Columna 0 hasta la 2
                 {
-
-                    if (c < E && c != E)
-                    {
-                        E++;
-                    }
-                    else
-                    {
-                        E = c;
-                    }
                     tablero[E] = Cuadricula[f][c];
+                    E++;
 
                 }
             }
@@ -639,7 +674,7 @@ namespace CppCLRWinFormsProject {
             }
 
         }
-    int Ganar(int tablero[9])
+        int Ganar(int tablero[9])
         {
 
             unsigned gana[8][3] = { {0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6} };
@@ -657,7 +692,7 @@ namespace CppCLRWinFormsProject {
 
 
         }
-    int minimax(int tablero[9], int jugador) {
+        int minimax(int tablero[9], int jugador) {
 
             // ¿Cómo es la posición del jugador (su turno) a bordo?
             int ganador = Ganar(tablero);
@@ -680,7 +715,7 @@ namespace CppCLRWinFormsProject {
             if (movimiento == -1) return 0;
             return puntuacion;
         }
-    void maquinamovimiento(int tablero[9]) {
+        void maquinamovimiento(int tablero[9]) {
             int movimiento = -1;
             int puntuacion = -2;
             int i;
@@ -700,7 +735,7 @@ namespace CppCLRWinFormsProject {
             Ubicar(movimiento, 1);
             tablero[movimiento] = 1;
         }
-    void Ubicar(int n, int j)
+        void Ubicar(int n, int j)
         {
             int F;
             int C;
@@ -788,7 +823,7 @@ namespace CppCLRWinFormsProject {
                 break;
             }
         }
-    void deshabilitarBTN(bool l) {
+        void deshabilitarBTN(bool l) {
             button1->Enabled = l;
             button2->Enabled = l;
             button3->Enabled = l;
@@ -802,7 +837,7 @@ namespace CppCLRWinFormsProject {
 
 
         }
-    void limpiar()
+        void limpiar()
         {
 
             X = -1;
@@ -830,13 +865,13 @@ namespace CppCLRWinFormsProject {
             tableLayoutPanel1->Visible = true;
 
         }
-    void verificarvictoria(int Cuadricula[3][3])
+        void verificarvictoria(int Cuadricula[3][3])
         {
             int E = 0;
             int b;
             int tablero[9];
-            int empate =0;
-            int ocupacion =0;
+            int empate = 0;
+            int ocupacion = 0;
 
             for (int f = 0; f < 3; f++)
             {
@@ -854,7 +889,7 @@ namespace CppCLRWinFormsProject {
                     tablero[E] = Cuadricula[f][c];
 
                 }
-            } 
+            }
 
             unsigned gana[8][3] = { {0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6} }; //Formas de ganar
             for (int i = 0; i < 8; ++i) {
@@ -864,46 +899,46 @@ namespace CppCLRWinFormsProject {
                 {
                     if (tablero[gana[i][0]] == -1)// Verifica si las casillas son iguales a -1, -1 = X
                     {
-                        label1->Text = "Ha ganado la X "+ "("+label4->Text+")";
+                        label1->Text = "Ha ganado la X " + "(" + label4->Text + ")";
                         label1->Enabled = true;
                         Vx++;
                         label6->Text = Vx.ToString();
                         deshabilitarBTN(false);
                         i = 8;
-                      
+
                     }
                     else// Verifica si las casillas son iguales a 1, 1 = O
                     {
-                        label1->Text = "Ha ganado el O "+ "("+ label5->Text + ")";
+                        label1->Text = "Ha ganado el O " + "(" + label5->Text + ")";
                         label1->Enabled = true;
                         Vo++;
                         label7->Text = Vo.ToString();
                         deshabilitarBTN(false);
                         i = 8;
-                     
+
                     }
 
-                    
+
                 }
                 else
                 {
                     empate++;
                 }
-           
+
             }
 
             for (int i = 0; i < 9; i++)
             {
-                if(tablero[i] != 0)//Verifica si la casilla esta ocupada
+                if (tablero[i] != 0)//Verifica si la casilla esta ocupada
                 {
                     ocupacion++;
                 }
             }
             if (ocupacion == 9 && empate == 8)//Si todas las casillas estan ocupadas y Si todas las formas de ganar fueron erroneas se produce un empate
             {
-               
-                    label1->Text = "El juego ha terminado en empate";
-                    label1->Enabled = true;
+
+                label1->Text = "El juego ha terminado en empate";
+                label1->Enabled = true;
             }
         }
     private: System::Void JugadorVsjugador_Click(System::Object^ sender, System::EventArgs^ e)
@@ -923,6 +958,9 @@ namespace CppCLRWinFormsProject {
         textBox3->Visible = true;
         textBox2->Text = "";
         textBox3->Text = "";
+        label8->Visible = true;
+        label9->Visible = true;
+        MessageBox::Show("Puede ingresar los nombres en las caja de texto y darle al boton E, mas no es obligatorio");
     }
     private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
         int F = 0;//fila
@@ -935,14 +973,16 @@ namespace CppCLRWinFormsProject {
                 if (Turno == 1) //Verifica el primer turno
                 {
                     N = Turno;
-                    Turno = 2;//Cede el turno al jugador 2
                     button1->Text = "X";
+                    Turno = 2;//Cede el turno al jugador 2
+
                 }
                 else
                 {
                     N = Turno;
-                    Turno = 1;//Cede el turno al jugador 1
                     button1->Text = "O";
+                    Turno = 1;//Cede el turno al jugador 1
+
                 }
 
             }
@@ -1225,6 +1265,8 @@ namespace CppCLRWinFormsProject {
         textBox3->Enabled = false;
         textBox2->Visible = false;
         textBox3->Visible = false;
+        label8->Visible = false;
+        label9->Visible = false;
     }
     private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
         deshabilitarBTN(false);
@@ -1239,6 +1281,8 @@ namespace CppCLRWinFormsProject {
         textBox3->Enabled = false;
         textBox2->Visible = false;
         textBox3->Visible = false;
+        label8->Visible = false;
+        label9->Visible = false;
     }
     private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
         deshabilitarBTN(false);
@@ -1256,7 +1300,10 @@ namespace CppCLRWinFormsProject {
         textBox3->Visible = false;
         label5->Text = "Jugador #2";
         label4->Text = "Jugador #1";
-;    }
+        label8->Visible = false;
+        label9->Visible = false;
+        
+    }
     private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
         X = -1;
         O = 1;
@@ -1277,48 +1324,65 @@ namespace CppCLRWinFormsProject {
         deshabilitarBTN(true);
     }
     private: static String^ TooSystemString(string str)//Normalizar el texto que se ingresa en los texbox
+    {
+        return  gcnew String(str.c_str());
+
+    }
+    public: static string toStandardString(System::String^ string)//Normaliza los string para que los txtbox sean capaz de leerlo
+    {
+        using System::Runtime::InteropServices::Marshal;
+        System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
+        char* charPointer = reinterpret_cast<char*>(pointer.ToPointer());
+        std::string returnString(charPointer, string->Length);
+        Marshal::FreeHGlobal(pointer);
+        return returnString;
+
+    }
+    private: System::Void cambiarnm_Click(System::Object^ sender, System::EventArgs^ e) {
+        string a = toStandardString(textBox2->Text);
+        string n = toStandardString(label5->Text);
+        if (a == ""|| a == n)
         {
-            return  gcnew String(str.c_str());
+            if (a == n)
+            {
+                MessageBox::Show("Los nombre deben de ser diferentes");
+              
+            }
+            else
+            {
+                MessageBox::Show("Ingrese un nombre");
+            }
+        }
+        else
+        {
+            label4->Text = textBox2->Text;
+        }
+
+    }
+    private: System::Void cambiarnombre2_Click(System::Object^ sender, System::EventArgs^ e) {
+        string a = toStandardString(textBox3->Text);
+        string n = toStandardString(label4->Text);
+        if (a == "" || a == n)
+        {
+            if (a == n)
+            {
+                MessageBox::Show("Los nombre deben de ser diferentes");
+             
+            }
+            else
+            {
+                MessageBox::Show("Ingrese un nombre");
+            }
 
         }
-    public: static string toStandardString(System::String^ string)//Normaliza los string para que los txtbox sean capaz de leerlo
-{
-    using System::Runtime::InteropServices::Marshal;
-    System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
-    char* charPointer = reinterpret_cast<char*>(pointer.ToPointer());
-    std::string returnString(charPointer, string->Length);
-    Marshal::FreeHGlobal(pointer);
-    return returnString;
-
-}
-    private: System::Void cambiarnm_Click(System::Object^ sender, System::EventArgs^ e) {
-    string a = toStandardString(textBox2->Text);
-    if (a == "")
-    {
-    MessageBox::Show("Ingrese un nombre");
-        
-    }
-    else
-    {
-        label4->Text = textBox2->Text;
-    }
-  
-}
-    private: System::Void cambiarnombre2_Click(System::Object^ sender, System::EventArgs^ e) {
-    string a = toStandardString(textBox3->Text);
-    if (a == "")
-    {
-        MessageBox::Show("Ingrese un nombre");
+        else
+        {
+            label5->Text = textBox3->Text;
+        }
 
     }
-    else 
-    {
-        label5->Text = textBox3->Text;
+    private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
     }
-    
-}
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+    };
 }
 
